@@ -1,0 +1,60 @@
+.theme-dark {
+  background: var(--color-surface-dark);
+  color: var(--text-high);
+  width: 100vw;
+}
+
+.sidebar {
+  background: #121826;
+  padding: var(--space);
+  box-shadow: var(--shadow);
+}
+
+.chat-window {
+  padding: var(--space);
+  background: rgba(20, 20, 30, 0.6);
+  border-radius: var(--radius);
+}
+
+.message-bubble {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space);
+}
+
+.message-bubble.user .bubble-text {
+  background: #1a1f2e;
+  color: var(--text-high);
+}
+
+.message-bubble.assistant .bubble-text {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.composer {
+  display: flex;
+  margin-top: var(--space);
+  height: fit-content;
+}
+
+.composer-input {
+  flex: 1;
+  padding: var(--space);
+  border-radius: var(--radius);
+  border: none;
+  background: #1a1f2e;
+  color: var(--text-high);
+}
+
+.send-btn {
+  margin-left: var(--space);
+  padding: var(--space);
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
