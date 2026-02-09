@@ -53,7 +53,9 @@ export default function App() {
 
   return (
   <div className="app-shell">
-    <Sidebar />
+    <Sidebar 
+      onClearChat={() => setMessages([])} 
+    />
     <main className="main-content">
       <header style={{ marginBottom: '20px' }}>
         <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>SYSTEM ACTIVE // STARLINER-01</span>
