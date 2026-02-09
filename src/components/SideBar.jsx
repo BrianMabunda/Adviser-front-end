@@ -1,11 +1,18 @@
 import React from 'react';
 
-export default function Sidebar({ theme, onToggleTheme }) {
+// components/SideBar.jsx
+export default function Sidebar() {
   return (
-    <aside className="sidebar">
-      <h2 className="logo">RAG Chat</h2>
-      <button className="new-chat">+ New Chat</button>
-      
+    <aside className="sidebar" style={{ width: '260px', borderRight: '1px solid rgba(0,229,255,0.1)', padding: '40px 20px' }}>
+      <h2 style={{ color: 'var(--color-primary)', letterSpacing: '2px', fontSize: '1.2rem', marginBottom: '40px' }}>
+        COSMIC CHAT AI
+      </h2>
+      <button className="new-chat" style={{
+        width: '100%', background: 'transparent', border: '1px solid var(--color-primary)', 
+        color: 'white', padding: '12px', borderRadius: '8px', cursor: 'pointer'
+      }}>
+        + NEW PROTOCOL
+      </button>
     </aside>
   );
 }

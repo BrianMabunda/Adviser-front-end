@@ -21,7 +21,7 @@ export default function App() {
 
     try {
       // 2. Call your LLM Endpoint
-      const response = await fetch('http://localhost:8000/api/chat', {
+      const response = await fetch('https://brianmabunda00-adviser-back-end.hf.space/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt: msg }), // Changed 'message' to 'prompt'
@@ -52,26 +52,16 @@ export default function App() {
   };
 
   return (
-  <div className={`app-shell theme-${theme}`}>
-    <Sidebar theme={theme} onToggleTheme={() => setTheme(dark)} />
-    
+  <div className="app-shell">
+    <Sidebar />
     <main className="main-content">
-      {/* High-Fidelity Header */}
-      <header className="chat-header">
-        {/* <h1>RAG Application</h1> */}
-        <div className="header-actions">
-           {/* Replace with the SVG atom icon provided earlier */}
-           <div className="status-dot"></div>
-        </div>
+      <header style={{ marginBottom: '20px' }}>
+        <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>SYSTEM ACTIVE // STARLINER-01</span>
       </header>
-
+      
       <ChatWindow messages={messages} />
       
-      {isLoading && (
-        <div className="typing-indicator">
-          <span></span><span></span><span></span>
-        </div>
-      )}
+      {isLoading && <div className="typing">Processing Query...</div>}
       
       <Composer onSend={handleSend} />
     </main>
