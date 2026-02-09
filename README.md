@@ -1,16 +1,73 @@
-# React + Vite
+# 🌌 Cosmic Chat AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-fidelity, futuristic **RAG (Retrieval-Augmented Generation)** chatbot interface built with React. This project features a "Glass HUD" aesthetic inspired by sci-fi interfaces, designed for seamless interaction with specialized AI protocols.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+* **Glassmorphism UI:** A modern interface utilizing `backdrop-filter` blurs, neon accents, and glowing borders to create a holographic feel.
+* **Dual-Agent RAG Switching:** Seamlessly toggle between different specialized AI protocols (e.g., *Company PA* and *Code Assistant*) with dedicated state management.
+* **Contextual Branding:** The UI dynamically updates "System Status," typography, and glow colors based on the active agent protocol.
+* **Responsive Chat Experience:** Smooth message transitions and intelligent auto-scrolling chat history using React hooks.
+* **Dark Mode Optimized:** Engineered for high-contrast, low-light environments with a custom radial-gradient cosmic backdrop.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** [React.js](https://reactjs.org/) (Powered by **Vite** for ultra-fast builds)
+* **Styling:** CSS3 Custom Properties (Design Tokens), Glassmorphism, Flexbox/Grid
+* **Backend Interface:** REST API via Async/Await Fetch
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* **Node.js** (v16.0.0 or higher)
+* **npm** or **yarn**
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/BrianMabunda/cosmic-chat-ai.git
+    cd cosmic-chat-ai
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure API Endpoint:**
+    Open `src/App.jsx` and update the `fetch` URL to point to your running LLM/RAG backend:
+    ```javascript
+    const response = await fetch('https://brianmabunda00-adviser-back-end.hf.space)/api/chat', {
+      method: 'POST',
+      // ... configuration
+    });
+    ```
+
+4.  **Launch the application:**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 📁 Project Architecture
+
+```text
+src/
+├── components/
+│   ├── SideBar.jsx       # Agent switching & Navigation
+│   ├── ChatWindow.jsx    # Message display area & Auto-scroll
+│   ├── MessageBubble.jsx # Themed message containers
+│   └── Composer.jsx      # Input HUD & Send logic
+├── styles/
+│   ├── token.css         # Global design variables (Neon/Glow)
+│   ├── theme-dark.css    # Core Glassmorphism layouts
+└── App.jsx               # Central State & API Orchestration
